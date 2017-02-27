@@ -1,7 +1,5 @@
-// Import React
 import React from "react"
 
-// Import Spectacle Core tags
 import {
   BlockQuote,
   Cite,
@@ -15,19 +13,15 @@ import {
   Text
 } from "spectacle"
 
-// Import image preloader util
 import preloader from "spectacle/lib/utils/preloader"
-
-// Import theme
 import createTheme from "spectacle/lib/themes/default"
 
-// Require CSS
 require("normalize.css")
 require("spectacle/lib/themes/default/index.css")
 
-
 const images = {
-  webpacklogo: require("../assets/wp-logo-on-dark-bg.png")
+  webpacklogo: require("../assets/wp-logo-on-dark-bg.png"),
+  buildSystems: require('../assets/buildSystems.png')
 }
 
 preloader(images);
@@ -36,7 +30,7 @@ const theme = createTheme({
   primary: "black",
   secondary: "white",
   malibu: "#8dd6f9",
-  denim: "#1d78c1"
+  denim: "#1d78c1",
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
@@ -47,7 +41,7 @@ require("./z60.css")
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme} progress="bar">
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             <Text margin="10px 0 0" textColor="denim" size={1} bold>
@@ -76,6 +70,7 @@ export default class Presentation extends React.Component {
             <ListItem>wepback key principals </ListItem>
             <ListItem>Upgrade path</ListItem>
             <ListItem>Dev / Prod configurations</ListItem>
+            <ListItem>Debugging</ListItem>
             <ListItem>Performance</ListItem>
           </List>
         </Slide>
@@ -84,6 +79,12 @@ export default class Presentation extends React.Component {
           <Heading size={6} textColor="secondary">What is webpack?</Heading>
 
         </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary">More on Modules...</Heading>
+
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary">Why webpack?</Heading>
 
@@ -116,6 +117,11 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Advanced</Heading>
+
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>Debugging</Heading>
 
         </Slide>
 

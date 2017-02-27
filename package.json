@@ -2,7 +2,7 @@
   "name": "zero-to-sixty-webpack-presentation",
   "version": "1.0.0",
   "description": "Presentation for webpack 2",
-  "main": "lib/index.js",
+  "main": "presentation/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --config webpack.config.production.js",
