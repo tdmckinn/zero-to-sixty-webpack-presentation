@@ -4915,9 +4915,9 @@ spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
-spectacle@^2.0.0:
+"spectacle@github:FormidableLabs/spectacle#4a1c181b696", "spectacle@github:formidablelabs/spectacle#4a1c181b696":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-2.0.0.tgz#c880d1c2e034b287d1a6566ced2a9bd776400de2"
+  resolved "https://codeload.github.com/FormidableLabs/spectacle/tar.gz/4a1c181b696"
   dependencies:
     component-playground "^1.3.1"
     lodash "^4.16.4"
