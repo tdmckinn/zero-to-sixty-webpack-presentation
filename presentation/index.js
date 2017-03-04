@@ -13,7 +13,7 @@ import {
   Text,
   Fill,
   Link,
-  Layout,
+  Layout
 } from "spectacle"
 
 import preloader from "spectacle/lib/utils/preloader"
@@ -51,7 +51,40 @@ require("./z60.css")
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme} progress="pacman">
+      <Deck
+        transition={["zoom", "slide"]}
+        transitionDuration={500}
+        theme={theme}
+        progress="custom"
+        progressAction={
+          (pointPosition) => {
+            const rotateImage = {
+              "0": {
+                transform: "rotate(0deg)"
+              },
+              "100": {
+                transform: "rotate(360deg)"
+              }
+            }
+            const progressStyle = {
+              animation: "progressCustom 0.12s linear 10 alternate both",
+              position: "absolute",
+              top: -2
+            }
+            return (
+              <div style={[pointPosition, { top: -28 }]}>
+                <div style={[progressStyle, rotateImage]}>
+                  <img src={images.webpackIconSmall} style={{
+                    width: 22,
+                    height: 22
+                  }}
+                  />
+                </div>
+              </div>
+            )
+          }
+        }
+      >
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             <Text margin="10px 0 0" textColor="denim" size={1} bold>
