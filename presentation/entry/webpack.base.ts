@@ -1,25 +1,29 @@
 const path = require('path')
 
-// Single Entry Quick and Simple
 interface IConfig {
-  entry: string|Array<string>
+  entry: string|Array<string>|Object // { <key>: string | Array<string> }
 }
 
-const entryConfigOne: IConfig = {
+const entryConfigOne = {
   entry: [
     path.resolve(__dirname, '../src/index.js')
   ]
 }
 
-const entryConfigTwo: IConfig = {
+const entryConfigTwo = {
   entry: path.resolve(__dirname, '../src/index.js')
 }
 
-const entryConfigThree: IConfig = {
-  entry: [0]
+const entryConfigThree = {
+  entry: {
+    'main': '../src/index.js',
+    'vender': '/path/to/vender.js'
+  }
 }
 
-
-module.exports = config
-
-// Object Syntax more config options for more complex setup
+const entryConfigFour = {
+  entry: {
+    'main': '../src/index.js',
+    'vender': ['/path/to/vender.js', '/path/to/excess.js']
+  }
+}

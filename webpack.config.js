@@ -41,7 +41,6 @@ module.exports = {
           ]
         ]
       },
-      exclude: /node_modules/,
       include: __dirname
     }, {
       test: /\.css$/,
@@ -64,7 +63,7 @@ module.exports = {
       loader: "url-loader?mimetype=image/jpg",
       include: path.join(__dirname, "assets")
     }]
-  }, 
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()

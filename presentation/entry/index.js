@@ -16,10 +16,13 @@ import {
   Layout
 } from "spectacle"
 
-const EntrySlides = () => (
+const EntrySlides = (
   <SlideSet>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Heading size={6} textColor="secondary" caps>Entry</Heading>
+    </Slide>
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>Dependency Graph</Heading>
     </Slide>
   </SlideSet>
 )

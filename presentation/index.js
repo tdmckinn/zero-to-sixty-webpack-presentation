@@ -13,13 +13,15 @@ import {
   Text,
   Fill,
   Link,
-  Layout
+  Layout,
 } from "spectacle"
 
 import preloader from "spectacle/lib/utils/preloader"
 import createTheme from "spectacle/lib/themes/default"
 
 import EntrySlides from "./entry"
+import PerformanceSlides from "./performance"
+import LoaderSlides from "./loader"
 
 require("normalize.css")
 require("spectacle/lib/themes/default/index.css")
@@ -27,9 +29,9 @@ require("spectacle/lib/themes/default/index.css")
 const images = {
   webpacklogo: require("../assets/wp-logo-on-dark-bg.png"),
   webpackIconSmall: require("../assets/icon-square-small.png"),
-  buildSystems: require("../assets/buildSystems.png")
+  buildSystems: require("../assets/buildSystems.png"),
+  toolbox: require("../assets/toolbox.gif")
 }
-
 const thankyouListTextSize = "26px"
 
 preloader(images);
@@ -73,7 +75,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="denim" caps>Take Aways</Heading>
+          <Heading size={5} textColor="denim" caps>Take Aways</Heading>
           <List>
             <ListItem>Reasons for using webpack</ListItem>
             <ListItem>wepback key principals </ListItem>
@@ -85,29 +87,55 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary">What is webpack?</Heading>
+          <Heading size={5} textColor="secondary">What is webpack?</Heading>
           <Image src={images.webpackIconSmall} width="40px"/>
-          <List>
-            <ListItem>Module Bundler</ListItem>
-            <ListItem>Static build Tool</ListItem>
-            <ListItem>Dependency Tree</ListItem>
-            <ListItem>EVERYTHING IS A MODULE!</ListItem>
-            <ListItem>Processes and Optimizes assets</ListItem>
-          </List>
+          <Layout>
+              <List>
+                <ListItem>Module Bundler</ListItem>
+                <ListItem>Static build Tool</ListItem>
+                <ListItem>Complexity Handler</ListItem>
+                <ListItem>Asset Coordinator</ListItem>
+                <ListItem>Not A task Runner</ListItem>
+              </List>
+            <Fill>
+              <div><Image src={images.toolbox} /> </div>
+            </Fill>
+          </Layout>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="denim">More on Modules...</Heading>
+        </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="denim">Dependency Tree</Heading>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary">Why webpack?</Heading>
             <Image src={images.buildSystems} width="1067px"/>
+            <Layout>
+              <Fill>
+                For
+                <div> - small to large app (configure what you need) </div>
+                <div> - Using various frontend assets </div>
+                <div> - Perfomance configurations </div>
+                <div> - Community supoort </div>
+                <div> - Modular code explicity state code relationships </div>
+              </Fill>
+               <Fill>
+                 Against
+                <div> - extremely small site </div>
+                <div> - not familar with build tools </div>
+                <div> - No care if code is in global scope </div>
+                <div> - Your development team has fully adopted another tool </div>
+              </Fill>
+            </Layout>
+
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} caps textColor="denim">Getting started: webpack core concepts</Heading>
+          <Heading size={6} caps textColor="denim"><span style={{ color: "#8dd6f9" }}>Getting started: </span> webpack core concepts</Heading>
           <br/>
           <br/>
           <Text textColor="secondary">Entry</Text>
@@ -116,17 +144,14 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Plugins</Text>
         </Slide>
 
-        <EntrySlides />
+        {EntrySlides}
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Output</Heading>
 
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Loaders</Heading>
-
-        </Slide>
+        {LoaderSlides}
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Plugins</Heading>
@@ -135,7 +160,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Advanced</Heading>
-
+          <Text>Tree Shaking</Text>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -143,10 +168,7 @@ export default class Presentation extends React.Component {
 
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Performance</Heading>
-
-        </Slide>
+        {PerformanceSlides}
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>Base, Dev, Prod, wepback configs</Heading>
