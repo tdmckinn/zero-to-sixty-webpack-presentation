@@ -1,10 +1,9 @@
-# Zero to Sixty with webpack 2
+# Zero to sixty with webpack 2
 
 Presentation on webpack key concepts, configuration, features, and more...
 
 ## Development
-
-After downloading the boilerplate, your first order of business is to open terminal and run `yarn`. (or `npm install` if you're about that life)
+`yarn`. (or `npm install` if you're about that life)
 
 Next, run `rm -R .git` to remove the existing version control.
 

@@ -5,6 +5,7 @@
   "main": "presentation/index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "install": "cd ./node_modules/spectacle/ && npm run build:lib",
     "build": "webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && next",
