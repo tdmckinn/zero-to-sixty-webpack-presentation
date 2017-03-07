@@ -22,6 +22,11 @@ const PerformanceSlides = (
       <Heading size={6} textColor="secondary" caps>Performance</Heading>
 
     </Slide>
+
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>webpack Bundle anaylizer</Heading>
+      <Text>Find out whats actually in your bundle through UI</Text>
+    </Slide>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Heading size={6} textColor="secondary">Performance Budgets</Heading>
       <div> Highlighting bundles that exceed 250kb in size </div>

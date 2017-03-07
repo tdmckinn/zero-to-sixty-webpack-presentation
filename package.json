@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "install": "cd ./node_modules/spectacle/ && npm run build:lib",
+    "spec": "cd ./node_modules/spectacle/ && npm run build:dist",
     "build": "webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && next",
@@ -17,7 +18,7 @@
     "normalize.css": "3.0.3",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "spectacle": "github:FormidableLabs/spectacle#4a1c181b696"
+    "spectacle": "github:tdmckinn/spectacle#9ce3f50"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
