@@ -16,16 +16,15 @@ import {
   Layout
 } from "spectacle"
 
-const EntrySlides = (
+const PluginsSlides = (
   <SlideSet>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Entry</Heading>
+      <Heading size={6} textColor="secondary" caps>Plugins</Heading>
     </Slide>
-
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Dependency Graph</Heading>
+      <Heading size={6} textColor="secondary" caps>Plugins Cont...</Heading>
     </Slide>
   </SlideSet>
 )
 
-export default EntrySlides
+export default PluginsSlides

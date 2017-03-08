@@ -32,6 +32,7 @@ const LoaderSlides = (
       <Text> Simple wrappers for compilers </Text>
       <Image src={images.loader} />
     </Slide>
+
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Text textColor="secondary">JSON Loader</Text>
       <Image src={images.loaderJson} />

@@ -16,16 +16,18 @@ import {
   Layout
 } from "spectacle"
 
-const EntrySlides = (
+const AdvancedSlides = (
   <SlideSet>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Entry</Heading>
+      <Heading size={6} textColor="secondary" caps>Advanced</Heading>
+      <Text>Tree Shaking</Text>
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Dependency Graph</Heading>
+      <Heading size={6} textColor="secondary" caps>Debugging</Heading>
+      <iframe src="//giphy.com/embed/53b7Lu6qlgwXC" width="480" height="255" frameBorder="0" className="giphy-embed" allowFullScreen />
     </Slide>
   </SlideSet>
 )
 
-export default EntrySlides
+export default AdvancedSlides

@@ -18,7 +18,7 @@
     "normalize.css": "3.0.3",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "spectacle": "github:tdmckinn/spectacle#9ce3f50"
+    "spectacle": "github:tdmckinn/spectacle#c63b456b4"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

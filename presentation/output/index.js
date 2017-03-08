@@ -16,16 +16,16 @@ import {
   Layout
 } from "spectacle"
 
-const EntrySlides = (
+const OutputSlides = (
   <SlideSet>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Entry</Heading>
+      <Heading size={6} textColor="secondary" caps>Output</Heading>
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>Dependency Graph</Heading>
+      <Heading size={6} textColor="secondary" caps>Output Cont...</Heading>
     </Slide>
   </SlideSet>
 )
 
-export default EntrySlides
+export default OutputSlides

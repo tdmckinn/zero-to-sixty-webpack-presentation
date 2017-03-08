@@ -18,13 +18,18 @@ import {
 
 import preloader from "spectacle/lib/utils/preloader"
 import createTheme from "spectacle/lib/themes/default"
+import styled, { keyframes } from "styled-components"
 
 import EntrySlides from "./entry"
+import LoaderSlides from "./loaders"
+import OutputSlides from "./output"
+import PluginsSlides from "./plugins"
 import PerformanceSlides from "./performance"
-import LoaderSlides from "./loader"
+import AdvancedSlides from "./advanced"
 
 require("normalize.css")
 require("spectacle/lib/themes/default/index.css")
+require("./z60.css")
 
 const images = {
   webpacklogo: require("../assets/wp-logo-on-dark-bg.png"),
@@ -46,8 +51,36 @@ const theme = createTheme({
   secondary: "Helvetica"
 })
 
-require("./z60.css")
+const customProgressMarkup = (pointPosition) => {
+  const rotate360 = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
 
+    to {
+      transform: rotate(360deg);
+    }
+  `
+  const Rotate = styled.div`
+    animation: ${rotate360} 1s ease-in-out 0.2s;
+  `
+  const progressStyle = {
+    position: "absolute",
+    transition: "left 0.3s ease-in-out 0.2s",
+    transform: "translate(-5px, -5px)"
+  }
+  return (
+    <div style={[progressStyle, pointPosition, { top: -31 }]}>
+      <Rotate>
+        <img src={images.webpackIconSmall} style={{
+          width: 20,
+          height: 20
+        }}
+        />
+      </Rotate>
+    </div>
+  )
+}
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -56,34 +89,7 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
         progress="custom"
-        progressAction={
-          (pointPosition) => {
-            const rotateImage = {
-              "0": {
-                transform: "rotate(0deg)"
-              },
-              "100": {
-                transform: "rotate(360deg)"
-              }
-            }
-            const progressStyle = {
-              animation: "progressCustom 0.12s linear 10 alternate both",
-              position: "absolute",
-              top: -2
-            }
-            return (
-              <div style={[pointPosition, { top: -28 }]}>
-                <div style={[progressStyle, rotateImage]}>
-                  <img src={images.webpackIconSmall} style={{
-                    width: 22,
-                    height: 22
-                  }}
-                  />
-                </div>
-              </div>
-            )
-          }
-        }
+        progressAction={customProgressMarkup}
       >
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
@@ -117,6 +123,10 @@ export default class Presentation extends React.Component {
             <ListItem>Debugging</ListItem>
             <ListItem>Performance</ListItem>
           </List>
+        </Slide>
+
+        <Slide>
+          <iframe src="//giphy.com/embed/Um3ljJl8jrnHy" width="480" height="315" frameBorder="0" className="giphy-embed" allowFullScreen />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -170,7 +180,6 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} caps textColor="denim"><span style={{ color: "#8dd6f9" }}>Getting started: </span> webpack core concepts</Heading>
           <br/>
-          <br/>
           <Text textColor="secondary">Entry</Text>
           <Text textColor="secondary">Output</Text>
           <Text textColor="secondary">Loaders</Text>
@@ -179,43 +188,30 @@ export default class Presentation extends React.Component {
 
         {EntrySlides}
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Output</Heading>
-
-        </Slide>
-
         {LoaderSlides}
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Plugins</Heading>
+        {AdvancedSlides}
 
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Advanced</Heading>
-          <Text>Tree Shaking</Text>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Debugging</Heading>
-
-        </Slide>
+        {PluginsSlides}
 
         {PerformanceSlides}
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Base, Dev, Prod, wepback configs</Heading>
-
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Resources</Heading>
-
+          <Heading size={6} textColor="secondary" caps>Configurations</Heading>
+           <Layout>
+            <Fill>
+              <Text>Base, Dev, Prod: wepback configs</Text>
+              <Text>webpack merge is your friend</Text>
+            </Fill>
+            <Fill>
+              <iframe src="//giphy.com/embed/Awsnv6t6Hv572" width="480" height="270" frameBorder="0" className="giphy-embed" allowFullScreen />
+          </Fill>
+          </Layout>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary" >
           <Heading size={6} textColor="secondary" caps>Thank you</Heading>
-          <Layout >
+          <Layout>
             <Fill>
               <Text textAlign="left" size={1}> Me: </Text>
               <List className="z60-thankyou">
