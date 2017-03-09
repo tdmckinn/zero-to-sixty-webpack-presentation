@@ -20,7 +20,15 @@ const AdvancedSlides = (
   <SlideSet>
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Heading size={6} textColor="secondary" caps>Advanced</Heading>
+      <Text>Code Splitting</Text>
       <Text>Tree Shaking</Text>
+      <Text>Debugging</Text>
+      <Text>PWA - Offline</Text>
+      <Text>Server Side builds</Text>
+    </Slide>
+
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>Code Splitting</Heading>
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">

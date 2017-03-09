@@ -13,7 +13,8 @@ import {
   Text,
   Fill,
   Link,
-  Layout
+  Layout,
+  Markdown
 } from "spectacle"
 
 import preloader from "spectacle/lib/utils/preloader"
@@ -26,6 +27,7 @@ import OutputSlides from "./output"
 import PluginsSlides from "./plugins"
 import PerformanceSlides from "./performance"
 import AdvancedSlides from "./advanced"
+import upgrade from "./upgrade.md"
 
 require("normalize.css")
 require("spectacle/lib/themes/default/index.css")
@@ -125,10 +127,6 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide>
-          <iframe src="//giphy.com/embed/Um3ljJl8jrnHy" width="480" height="315" frameBorder="0" className="giphy-embed" allowFullScreen />
-        </Slide>
-
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={5} textColor="secondary">What is webpack?</Heading>
           <Image src={images.webpackIconSmall} width="40px"/>
@@ -147,11 +145,13 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="denim">More on Modules...</Heading>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="denim">Dependency Tree</Heading>
+          <Heading size={5} textColor="denim">More on Modules...</Heading>
+          <br/>
+          <Text textColor="secondary">* Encapsulation</Text>
+          <Text textColor="secondary">* Allow for better Maintainability</Text>
+          <Text textColor="secondary">* Namespaced</Text>
+          <Text textColor="secondary">* Code Reuse</Text>
+          <Text textColor="secondary">* (CommonJS):Sync| (AMD):Async</Text>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -174,7 +174,17 @@ export default class Presentation extends React.Component {
                 <div> - Your development team has fully adopted another tool </div>
               </Fill>
             </Layout>
+        </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary" textColor="tertiary">
+          <div id="upgrade-md" className="upgrade-md">
+            <Markdown>
+            {upgrade}
+            </Markdown>
+          </div>
+        </Slide>
+        <Slide>
+          <iframe src="//giphy.com/embed/Um3ljJl8jrnHy" width="480" height="315" frameBorder="0" className="giphy-embed" allowFullScreen />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -187,6 +197,8 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {EntrySlides}
+
+        {OutputSlides}
 
         {LoaderSlides}
 
@@ -205,7 +217,7 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <iframe src="//giphy.com/embed/Awsnv6t6Hv572" width="480" height="270" frameBorder="0" className="giphy-embed" allowFullScreen />
-          </Fill>
+            </Fill>
           </Layout>
         </Slide>
 
