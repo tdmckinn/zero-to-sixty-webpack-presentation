@@ -20,7 +20,8 @@ import preloader from "spectacle/lib/utils/preloader"
 
 const images = {
   loader: require("../../assets/loadersmain.png"),
-  loaderJson: require("../../assets/json-loader.png")
+  loaderJson: require("../../assets/json-loader.png"),
+  baeblLoader: require("../../assets/babel-loader-ex.png")
 }
 
 preloader(images)
@@ -46,13 +47,18 @@ const LoaderSlides = (
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-      <Text textColor="secondary">JSON Loader</Text>
+      <Text textColor="secondary">Loader Ex.</Text>
       <Image src={images.loader} style={{ maxWidth: "100%" }} />
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Text textColor="secondary">JSON Loader</Text>
       <Image src={images.loaderJson} style={{ maxWidth: "100%" }} />
+    </Slide>
+    
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Text textColor="secondary">Babel Loader Ex.</Text>
+      <Image src={images.baeblLoader} style={{ maxWidth: "100%" }} />
     </Slide>
   </SlideSet>
 )

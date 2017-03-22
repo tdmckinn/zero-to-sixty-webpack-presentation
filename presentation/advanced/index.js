@@ -32,8 +32,20 @@ const AdvancedSlides = (
     </Slide>
 
     <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>Tree-shaking</Heading>
+    </Slide>
+
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
       <Heading size={6} textColor="secondary" caps>Debugging</Heading>
       <iframe src="//giphy.com/embed/53b7Lu6qlgwXC" width="480" height="255" frameBorder="0" className="giphy-embed" allowFullScreen />
+    </Slide>
+
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>PWA- Offiline</Heading>
+    </Slide>
+
+    <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+      <Heading size={6} textColor="secondary" caps>Server Side Builds</Heading>
     </Slide>
   </SlideSet>
 )

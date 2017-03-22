@@ -121,7 +121,7 @@ export default class Presentation extends React.Component {
             <ListItem>Reasons for using webpack</ListItem>
             <ListItem>wepback key principals </ListItem>
             <ListItem>Upgrade path</ListItem>
-            <ListItem>Dev / Prod configurations</ListItem>
+            <ListItem>Environment configurations</ListItem>
             <ListItem>Debugging</ListItem>
             <ListItem>Performance</ListItem>
           </List>
@@ -130,14 +130,14 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={5} textColor="secondary">What is webpack?</Heading>
           <Image src={images.webpackIconSmall} width="40px"/>
+          <Text textColor="malibu">webpack is a module bundler</Text>
           <Layout>
-              <List>
-                <ListItem>Module Bundler</ListItem>
-                <ListItem>Static build Tool</ListItem>
-                <ListItem>Complexity Handler</ListItem>
-                <ListItem>Asset Coordinator</ListItem>
-                <ListItem>Not A task Runner</ListItem>
-              </List>
+              <ul className="webpack-what-list">
+                <li>Static build Tool</li>
+                <li>Complexity Handler</li>
+                <li>Asset Coordinator</li>
+                <li className="strike">Task Runner</li>
+              </ul>
             <Fill>
               <div><Image src={images.toolbox} /> </div>
             </Fill>
@@ -155,11 +155,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary">Why webpack?</Heading>
+          <Heading size={4} textColor="denim">Why webpack?</Heading>
             <Image src={images.buildSystems} width="1067px"/>
             <Layout>
               <Fill>
-                For
+                <Text textColor="denim">For</Text>
                 <div> - small to large app (configure what you need) </div>
                 <div> - Using various frontend assets </div>
                 <div> - Perfomance configurations </div>
@@ -167,7 +167,7 @@ export default class Presentation extends React.Component {
                 <div> - Modular code explicity state code relationships </div>
               </Fill>
                <Fill>
-                 Against
+                 <Text textColor="denim">Against</Text>
                 <div> - extremely small site </div>
                 <div> - not familar with build tools </div>
                 <div> - No care if code is in global scope </div>
@@ -220,7 +220,27 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary" >
+          <Heading size={6} textColor="secondary" caps>Documentation</Heading>
 
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary" >
+          <Heading size={6} textColor="secondary" caps>Conclusion</Heading>
+            <List>
+              <ListItem textSize={thankyouListTextSize}>
+                webpack can be simple, complexity comes with application growth
+              </ListItem>
+              <ListItem textSize={thankyouListTextSize}>
+                Learn various features by expirimenting
+              </ListItem>
+              <ListItem textSize={thankyouListTextSize}>
+                Stable Production builds
+              </ListItem>
+              <ListItem textSize={thankyouListTextSize}>
+                Check out the docs
+              </ListItem>
+            </List>
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary" >
           <Heading size={6} textColor="secondary" caps>Thank you</Heading>
           <Layout>
